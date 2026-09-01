@@ -1,3 +1,4 @@
+/*api*/
 function numberParam(params, name, fallback, min, max) {
   const value = Number(params.get(name));
   if (!Number.isFinite(value)) return fallback;
