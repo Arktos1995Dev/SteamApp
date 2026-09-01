@@ -1,6 +1,11 @@
 name = "under-the-radar"
 compatibility_date = "2026-08-31"
 
+main = "src/index.js"
+
+[assets]
+directory = "./public"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "steam-games"
