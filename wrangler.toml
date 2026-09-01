@@ -1,0 +1,7 @@
+name = "under-the-radar"
+compatibility_date = "2026-08-31"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "steam-games"
+database_id = "77317d10-6069-447f-8d36-b3c92eded4e7"
