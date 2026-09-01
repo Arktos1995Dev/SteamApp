@@ -1,0 +1,9 @@
+.manual-pair{display:inline-flex;gap:6px;margin-left:10px}
+.manual-input,.date-filter input{appearance:none;background:#0e1513;border:1px solid #395249;color:#cbf264;border-radius:3px;font:500 11px 'DM Mono',monospace;height:28px;padding:0 8px;outline:none;transition:border-color .2s,box-shadow .2s}
+.manual-input{width:74px;text-align:right}
+.manual-input:focus,.date-filter input:focus{border-color:#cbf264;box-shadow:0 0 0 2px rgba(203,242,100,.12)}
+.date-filter{display:flex;align-items:center;gap:12px;margin:0 0 24px;padding:14px 16px;background:#14201c;border:1px solid rgba(204,242,100,.11)}
+.date-filter label{color:#a9b7b1;font:500 10px 'DM Mono',monospace;letter-spacing:1px;margin-right:auto}
+.date-filter input{width:150px;color-scheme:dark}
+.date-filter>span{color:#cbf264;font:14px 'DM Mono',monospace}
+@media(max-width:700px){.filter-label{align-items:flex-start;gap:8px;flex-wrap:wrap}.manual-pair{margin-left:auto}.date-filter{align-items:flex-start;flex-wrap:wrap}.date-filter label{width:100%;margin:0 0 3px}.date-filter input{flex:1;min-width:0}}
