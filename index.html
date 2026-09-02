@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under the Radar — поиск игр Steam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="glow glow-one"></div><div class="glow glow-two"></div>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark">↘</span>UNDER<br>THE RADAR</a><div class="top-note"><span></span>LIVE STEAM DATA</div></header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">ПОИСК СКРЫТЫХ ЖЕМЧУЖИН</p>
+    </section>
+    <section class="search-panel" aria-label="Фильтры поиска">
+      <div class="query-field"><label for="query">ЧТО ИЩЕМ?</label><div class="input-wrap"><span>⌕</span><input id="query" type="search" value="" placeholder="Название игры…"></div><div class="input-wrap genre-input"><span>◈</span><input id="genre" type="search" value="" placeholder="Жанр: RPG, Strategy, Horror…"></div></div>
+      <div class="filter-grid">
+        <div class="filter-card"><div class="filter-label">КОЛИЧЕСТВО ОТЗЫВОВ <output id="reviews-output">от 0 до 3 000</output><span class="manual-pair"><input id="reviews-min" class="manual-input" type="number" min="0" max="10000" value="0"><input id="reviews-number" class="manual-input" type="number" min="0" max="10000" step="1" value="3000"></span></div><div class="range-values"><span>0</span><span>10 000+</span></div><span class="dual-range"><input id="reviews-min-range" type="range" min="0" max="10000" step="1" value="0"><input id="reviews" type="range" min="0" max="10000" step="1" value="3000"></span><p>Показывать игры с <strong><span id="reviews-min-copy">0</span>–<span id="reviews-copy">3 000</span></strong> отзывами</p></div>
+        <div class="filter-card"><div class="filter-label">ПОЛОЖИТЕЛЬНЫЕ ОТЗЫВЫ <output id="positive-output">от 80 до 100%</output><span class="manual-pair"><input id="positive-number" class="manual-input" type="number" min="0" max="100" value="80"><input id="positive-max" class="manual-input" type="number" min="0" max="100" value="100"></span></div><div class="range-values"><span>0%</span><span>100%</span></div><span class="dual-range"><input id="positive" type="range" min="0" max="100" step="1" value="80"><input id="positive-max-range" type="range" min="0" max="100" step="1" value="100"></span><p>Только игры с рейтингом <strong><span id="positive-copy">80</span>–<span id="positive-max-copy">100</span>%</strong></p></div>
+      </div>
+      <div class="date-filter"><label for="release-from">ДАТА РЕЛИЗА</label><input id="release-from" type="date"><span>—</span><input id="release-to" type="date"></div>
+      <button id="search-button" class="search-button">НАЙТИ ИГРЫ <span>→</span></button>
+    </section>
+    <section class="results-head"><div><p class="eyebrow">РЕЗУЛЬТАТЫ ПОИСКА</p><h2 id="result-title">В фокусе сегодня</h2></div><p id="results-meta" class="results-meta">Подберите фильтры и нажмите «Найти игры»</p></section>
+    <section id="results" class="results" aria-live="polite">
+      <div class="empty-state"><div class="radar-icon">◎</div><h3>Ваша следующая находка ждёт</h3><p>Укажите жанр или оставьте «indie», чтобы начать поиск по Steam.</p></div>
+    </section>
+  </main>
+  <footer><span>UNDER THE RADAR / STEAM DISCOVERY TOOL</span><span>Данные отзывов предоставлены Steam</span></footer>
+  <template id="game-template"><article class="game-card"><a class="cover-link" target="_blank" rel="noreferrer"><img class="cover" alt=""><span class="external">↗</span></a><div class="game-info"><div class="game-top"><h3></h3><span class="price"></span></div><div class="stats"><span class="rating">★ <b></b> положительных</span><span class="reviews-count"></span></div><div class="card-bottom"><span class="release"></span><a class="steam-link" target="_blank" rel="noreferrer">ОТКРЫТЬ В STEAM →</a></div></div></article></template>
+  <script src="app.js"></script>
+</body>
+</html>
+
