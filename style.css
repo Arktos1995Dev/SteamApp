@@ -84,7 +84,7 @@ body {
   box-shadow:0 0 12px var(--lime)
 }
 .hero {
-  padding:98px 0 55px;
+  padding:48px 0 30px;
   max-width:795px
 }
 .eyebrow {
@@ -378,7 +378,7 @@ footer {
   font-size:9px
 }
 .hero {
-  padding:60px 0 38px
+  padding:34px 0 24px
 }
 .hero h1 {
   letter-spacing:-2.7px
