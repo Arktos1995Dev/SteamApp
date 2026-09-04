@@ -1,6 +1,6 @@
 const $ = (id) => document.getElementById(id);
 const format = new Intl.NumberFormat('ru-RU');
-const reviews = $('reviews'), positive = $('positive'), reviewsNumber = $('reviews-number'), reviewsMin = $('reviews-min'), positiveNumber = $('positive-number'), positiveMax = $('positive-max'), button = $('search-button'), results = $('results');
+const reviews = $('reviews'), positive = $('positive'), reviewsMinRange = $('reviews-min-range'), positiveMaxRange = $('positive-max-range'), reviewsNumber = $('reviews-number'), reviewsMin = $('reviews-min'), positiveNumber = $('positive-number'), positiveMax = $('positive-max'), button = $('search-button'), results = $('results');
 
 function updateLabels() {
   $('reviews-output').textContent = `от ${format.format(reviewsMin.value)} до ${format.format(reviews.value)}`;
@@ -50,4 +50,10 @@ reviewsMin.addEventListener('input', updateLabels); positiveMax.addEventListener
 button.addEventListener('click', search);
 $('query').addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
 updateLabels();
+const today = new Date();
+const thirtyDaysAgo = new Date(today);
+thirtyDaysAgo.setDate(today.getDate() - 30);
+const toDateInput = date => date.toISOString().slice(0, 10);
+if (!$('release-from').value) $('release-from').value = toDateInput(thirtyDaysAgo);
+if (!$('release-to').value) $('release-to').value = toDateInput(today);
 
