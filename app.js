@@ -10,7 +10,8 @@ function updateLabels() {
   $('positive-copy').textContent = positive.value;
   $('positive-max-copy').textContent = positiveMax.value;
 }
-function syncRange(range, number) { range.addEventListener('input', () => { number.value = range.value; updateLabels(); }); number.addEventListener('input', () => { if (number.value !== '') { range.value = number.value; updateLabels(); } }); }\nfunction syncManual(slider, number) {
+function syncRange(range, number) { range.addEventListener('input', () => { number.value = range.value; updateLabels(); }); number.addEventListener('input', () => { if (number.value !== '') { range.value = number.value; updateLabels(); } }); }
+function syncManual(slider, number) {
   slider.addEventListener('input', () => { number.value = slider.value; updateLabels(); });
   number.addEventListener('input', () => { if (number.value === '') return; slider.value = Math.min(+slider.max, Math.max(+slider.min, +number.value)); updateLabels(); });
   number.addEventListener('change', () => { if (number.value === '') number.value = slider.value; });
@@ -56,4 +57,6 @@ thirtyDaysAgo.setDate(today.getDate() - 30);
 const toDateInput = date => date.toISOString().slice(0, 10);
 if (!$('release-from').value) $('release-from').value = toDateInput(thirtyDaysAgo);
 if (!$('release-to').value) $('release-to').value = toDateInput(today);
+
+
 
